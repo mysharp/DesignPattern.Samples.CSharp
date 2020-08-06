@@ -45,6 +45,7 @@ namespace EDC.DesignPattern.Singleton
         }
 
         // 使用内部类+静态构造函数实现延迟初始化
+        // 当第一次用到这个嵌套类型的时候，会调用静态构造函数创建LoadBalancer的实例instance。如果我们不调用属性LoadBalancer.GetLoadBalancer()，那么就不会触发.NET运行时（CLR）调用Nested，也就不会创建实例，因此也就保证了按需创建实例（或延迟初始化）
         class Nested
         {
             static Nested() { }
@@ -71,7 +72,7 @@ namespace EDC.DesignPattern.Singleton
         }
 
         // 获得一台Server - 使用随机数获取
-        private Random rand = new Random();
+        private readonly Random rand = new Random();
         public CustomServer GetServer()
         {
             int index = rand.Next(serverList.Count);

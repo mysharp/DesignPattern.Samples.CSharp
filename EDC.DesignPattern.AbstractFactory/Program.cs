@@ -13,7 +13,7 @@ namespace EDC.DesignPattern.AbstractFactory
             ISkinFactory skinFactory = (ISkinFactory) AppConfigHelper.GetSkinFactoryInstance();
             if (skinFactory == null)
             {
-                Console.WriteLine("读取当前选中皮肤类型失败...");
+                Console.WriteLine("read the skin failed...");
             }
 
             IButton button = skinFactory.CreateButton();

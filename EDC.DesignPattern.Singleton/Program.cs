@@ -18,7 +18,7 @@ namespace EDC.DesignPattern.Singleton
             // 判断负载均衡器是否相同
             if (balancer == balancer2 && balancer == balancer3 && balancer2 == balancer3)
             {
-                Console.WriteLine("^_^ : 服务器负载均衡器是唯一的！");
+                Console.WriteLine("^_^ : the balancer is single！");
             }
 
             // 增加服务器
@@ -31,7 +31,7 @@ namespace EDC.DesignPattern.Singleton
             for (int i = 0; i < 10; i++)
             {
                 CustomServer server = balancer.GetServer();
-                Console.WriteLine("该请求已分配至 : " + server.Name);
+                Console.WriteLine("the request is assigned to : " + server.Name);
             }
 
             Console.ReadKey();

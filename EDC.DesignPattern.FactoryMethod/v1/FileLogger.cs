@@ -10,7 +10,7 @@ namespace EDC.DesignPattern.FactoryMethod.v1
     {
         public void WriteLog()
         {
-            Console.WriteLine("文件日志记录...");
+            Console.WriteLine("File Logger...");
         }
     }
 }

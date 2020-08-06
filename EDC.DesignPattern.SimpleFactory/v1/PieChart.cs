@@ -10,12 +10,12 @@ namespace EDC.DesignPattern.SimpleFactory.v1
     {
         public PieChart()
         {
-            Console.WriteLine("创建饼状图...");
+            Console.WriteLine("Create PieChart...");
         }
 
         public void Display()
         {
-            Console.WriteLine("显示饼状图...");
+            Console.WriteLine("Show PieChart...");
         }
     }
 }

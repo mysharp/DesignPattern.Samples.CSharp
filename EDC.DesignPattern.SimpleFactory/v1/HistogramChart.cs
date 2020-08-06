@@ -10,12 +10,12 @@ namespace EDC.DesignPattern.SimpleFactory.v1
     {
         public HistogramChart()
         {
-            Console.WriteLine("创建柱状图...");
+            Console.WriteLine("Create HistogramChart...");
         }
 
         public void Display()
         {
-            Console.WriteLine("显示柱状图...");
+            Console.WriteLine("Show HistogramChart...");
         }
     }
 }

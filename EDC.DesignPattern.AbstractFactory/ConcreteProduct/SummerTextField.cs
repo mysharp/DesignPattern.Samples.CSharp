@@ -10,7 +10,7 @@ namespace EDC.DesignPattern.AbstractFactory
     {
         public void Display()
         {
-            Console.WriteLine("显示蓝色边框文本框...");
+            Console.WriteLine("Summer TextField...");
         }
     }
 }

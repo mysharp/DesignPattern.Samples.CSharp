@@ -10,12 +10,12 @@ namespace EDC.DesignPattern.SimpleFactory.v1
     {
         public LineChart()
         {
-            Console.WriteLine("创建折线图...");
+            Console.WriteLine("Create LineChart...");
         }
 
         public void Display()
         {
-            Console.WriteLine("显示折线图...");
+            Console.WriteLine("Show LineChart...");
         }
     }
 }

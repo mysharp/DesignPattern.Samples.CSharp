@@ -10,7 +10,7 @@ namespace EDC.DesignPattern.AbstractFactory
     {
         public void Display()
         {
-            Console.WriteLine("显示浅绿色按钮...");
+            Console.WriteLine("Spring Button...");
         }
     }
 }
