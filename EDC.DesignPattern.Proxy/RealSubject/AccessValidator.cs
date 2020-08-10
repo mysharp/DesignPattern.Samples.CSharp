@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Proxy
 {
     /// <summary>
-    /// 业务类：身份验证类
+    ///     业务类：身份验证类
     /// </summary>
     public class AccessValidator
     {
         /// <summary>
-        /// 模拟实现登录验证
+        ///     模拟实现登录验证
         /// </summary>
         /// <param name="userID"></param>
         /// <returns></returns>
@@ -24,11 +20,9 @@ namespace EDC.DesignPattern.Proxy
                 Console.WriteLine("{0} 登录成功!", userID);
                 return true;
             }
-            else
-            {
-                Console.WriteLine("{0} 登录失败!", userID);
-                return false;
-            }
+
+            Console.WriteLine("{0} 登录失败!", userID);
+            return false;
         }
     }
 }

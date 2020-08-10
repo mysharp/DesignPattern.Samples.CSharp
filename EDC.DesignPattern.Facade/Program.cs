@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Facade
 {
@@ -13,11 +9,8 @@ namespace EDC.DesignPattern.Facade
             //EncryptFacade facade = new EncryptFacade();
             //facade.FileEncrypt("Facade/src.txt", "Facade/des.txt");
 
-            AbstractEncryptFacade newFacade = AppConfigHelper.GetFacadeInstance() as AbstractEncryptFacade;
-            if (newFacade != null)
-            {
-                newFacade.FileEncrypt("Facade/src.txt", "Facade/des.txt");
-            }
+            var newFacade = AppConfigHelper.GetFacadeInstance() as AbstractEncryptFacade;
+            if (newFacade != null) newFacade.FileEncrypt("Facade/src.txt", "Facade/des.txt");
 
             Console.ReadKey();
         }

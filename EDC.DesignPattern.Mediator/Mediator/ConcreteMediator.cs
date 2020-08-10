@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Mediator
 {
     /// <summary>
-    /// 具体中介者
+    ///     具体中介者
     /// </summary>
     public class ConcreteMediator : Mediator
     {
         // 维持对各个同事对象的引用
         public Button addButton;
+        public ComboBox cb;
         public List list;
         public TextBox userNameTextBox;
-        public ComboBox cb;
 
         // 封装同事对象之间的交互
         public override void ComponenetChanged(Component c)

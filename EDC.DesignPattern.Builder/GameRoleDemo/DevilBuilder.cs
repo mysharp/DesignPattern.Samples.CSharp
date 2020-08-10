@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Builder
+﻿namespace EDC.DesignPattern.Builder
 {
     /// <summary>
-    /// 恶魔角色建造器 ：具体建造者
+    ///     恶魔角色建造器 ：具体建造者
     /// </summary>
     public class DevilBuilder : ActorBuilder
     {

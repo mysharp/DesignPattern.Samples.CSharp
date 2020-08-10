@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.AbstractFactory
 {
@@ -10,15 +6,12 @@ namespace EDC.DesignPattern.AbstractFactory
     {
         public static void Main(string[] args)
         {
-            ISkinFactory skinFactory = (ISkinFactory) AppConfigHelper.GetSkinFactoryInstance();
-            if (skinFactory == null)
-            {
-                Console.WriteLine("read the skin failed...");
-            }
+            var skinFactory = (ISkinFactory) AppConfigHelper.GetSkinFactoryInstance();
+            if (skinFactory == null) Console.WriteLine("read the skin failed...");
 
-            IButton button = skinFactory.CreateButton();
-            ITextField textField = skinFactory.CreateTextField();
-            IComboBox comboBox = skinFactory.CreateComboBox();
+            var button = skinFactory.CreateButton();
+            var textField = skinFactory.CreateTextField();
+            var comboBox = skinFactory.CreateComboBox();
 
             button.Display();
             textField.Display();

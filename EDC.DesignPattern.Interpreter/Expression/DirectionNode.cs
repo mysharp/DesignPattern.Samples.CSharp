@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Interpreter
+﻿namespace EDC.DesignPattern.Interpreter
 {
     /// <summary>
-    /// 终结符表达式：方向解释
+    ///     终结符表达式：方向解释
     /// </summary>
     public class DirectionNode : AbstractNode
     {
-        private string direction;
+        private readonly string direction;
 
         public DirectionNode(string direction)
         {
@@ -21,7 +15,7 @@ namespace EDC.DesignPattern.Interpreter
         // 方向表达式的解释操作
         public override string Interpret()
         {
-            string result = string.Empty;
+            var result = string.Empty;
             switch (direction.ToLower())
             {
                 case "up":

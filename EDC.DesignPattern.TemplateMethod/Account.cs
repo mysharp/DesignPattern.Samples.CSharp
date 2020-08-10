@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.TemplateMethod
 {
     /// <summary>
-    /// 抽象类：Account
+    ///     抽象类：Account
     /// </summary>
     public abstract class Account
     {
@@ -18,13 +14,8 @@ namespace EDC.DesignPattern.TemplateMethod
             Console.WriteLine("密码 : {0}", password);
 
             if (account.Equals("张无忌") && password.Equals("123456"))
-            {
                 return true;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         // 基本方法 - 抽象方法
@@ -53,10 +44,7 @@ namespace EDC.DesignPattern.TemplateMethod
 
             CalculateInterest();
 
-            if (IsAllowDisplay())
-            {
-                Display();
-            }
+            if (IsAllowDisplay()) Display();
         }
     }
 }

@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Mediator
 {
     /// <summary>
-    /// 具体同事类：按钮组件
+    ///     具体同事类：按钮组件
     /// </summary>
     public class Button : Component
     {
@@ -18,7 +14,7 @@ namespace EDC.DesignPattern.Mediator
     }
 
     /// <summary>
-    /// 具体同事类：列表框组件
+    ///     具体同事类：列表框组件
     /// </summary>
     public class List : Component
     {
@@ -34,7 +30,7 @@ namespace EDC.DesignPattern.Mediator
     }
 
     /// <summary>
-    /// 具体同事类：组合框组件
+    ///     具体同事类：组合框组件
     /// </summary>
     public class ComboBox : Component
     {
@@ -50,7 +46,7 @@ namespace EDC.DesignPattern.Mediator
     }
 
     /// <summary>
-    /// 具体同事类：文本框组件
+    ///     具体同事类：文本框组件
     /// </summary>
     public class TextBox : Component
     {
@@ -66,7 +62,7 @@ namespace EDC.DesignPattern.Mediator
     }
 
     /// <summary>
-    /// 具体同事类：标签组件
+    ///     具体同事类：标签组件
     /// </summary>
     public class Label : Component
     {

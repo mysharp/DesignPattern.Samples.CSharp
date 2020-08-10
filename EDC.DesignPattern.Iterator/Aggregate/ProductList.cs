@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace EDC.DesignPattern.Iterator
 {
     /// <summary>
-    /// 具体聚合类：ProductList
+    ///     具体聚合类：ProductList
     /// </summary>
     public class ProductList : AbstractObjectList
     {
@@ -21,21 +17,21 @@ namespace EDC.DesignPattern.Iterator
         }
 
         /// <summary>
-        /// 内部类=>具体迭代器：ProductIterator
+        ///     内部类=>具体迭代器：ProductIterator
         /// </summary>
         private class ProductIterator : AbstractIterator
         {
+            private int cursor1; // 定义一个游标，用于记录正向遍历的位置
+            private int cursor2; // 定义一个游标，用于记录逆向遍历的位置
             private ProductList productList;
-            private IList<object> products;
-            private int cursor1;    // 定义一个游标，用于记录正向遍历的位置
-            private int cursor2;    // 定义一个游标，用于记录逆向遍历的位置
+            private readonly IList<object> products;
 
             public ProductIterator(ProductList productList)
             {
                 this.productList = productList;
-                this.products = productList.GetObjectList();       // 获取集合对象
-                this.cursor1 = 0;                                                            // 设置正向遍历游标的初始值
-                this.cursor2 = this.products.Count - 1;                 // 设置逆向遍历游标的初始值
+                products = productList.GetObjectList(); // 获取集合对象
+                cursor1 = 0; // 设置正向遍历游标的初始值
+                cursor2 = products.Count - 1; // 设置逆向遍历游标的初始值
             }
 
             public object GetNextItem()
@@ -60,18 +56,12 @@ namespace EDC.DesignPattern.Iterator
 
             public void Next()
             {
-                if (cursor1 < products.Count)
-                {
-                    cursor1++;
-                }
+                if (cursor1 < products.Count) cursor1++;
             }
 
             public void Previous()
             {
-                if (cursor2 > -1)
-                {
-                    cursor2--;
-                }
+                if (cursor2 > -1) cursor2--;
             }
         }
     }

@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Interpreter
+﻿namespace EDC.DesignPattern.Interpreter
 {
     /// <summary>
-    /// 非终结符表达式：简单句子解释
+    ///     非终结符表达式：简单句子解释
     /// </summary>
     public class SentenseNode : AbstractNode
     {
-        private AbstractNode direction;
-        private AbstractNode action;
-        private AbstractNode distance;
+        private readonly AbstractNode action;
+        private readonly AbstractNode direction;
+        private readonly AbstractNode distance;
 
         public SentenseNode(AbstractNode direction, AbstractNode action, AbstractNode distance)
         {

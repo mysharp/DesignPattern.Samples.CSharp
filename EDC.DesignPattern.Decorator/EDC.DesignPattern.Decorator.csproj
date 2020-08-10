@@ -7,8 +7,8 @@
     <ProjectGuid>{E3E5A70E-E612-4C2F-8EF3-8092D77C1284}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EDC.DesignPatterm.Decorator</RootNamespace>
-    <AssemblyName>EDC.DesignPatterm.Decorator</AssemblyName>
+    <RootNamespace>EDC.DesignPattern.Decorator</RootNamespace>
+    <AssemblyName>EDC.DesignPattern.Decorator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Requirement.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Composite.InitializeVersion
 {
     public class ImageFile
     {
-        private string name;
+        private readonly string name;
 
         public ImageFile(string name)
         {
@@ -24,7 +20,7 @@ namespace EDC.DesignPattern.Composite.InitializeVersion
 
     public class TextFile
     {
-        private string name;
+        private readonly string name;
 
         public TextFile(string name)
         {

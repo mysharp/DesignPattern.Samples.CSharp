@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Interpreter
+﻿namespace EDC.DesignPattern.Interpreter
 {
     /// <summary>
-    /// 非终结符表达式：And解释
+    ///     非终结符表达式：And解释
     /// </summary>
     public class AndNode : AbstractNode
     {
-        private AbstractNode left;
-        private AbstractNode right;
+        private readonly AbstractNode left;
+        private readonly AbstractNode right;
 
         public AndNode(AbstractNode left, AbstractNode right)
         {

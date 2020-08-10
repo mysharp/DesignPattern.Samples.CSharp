@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Composite.RefactoredVersion
 {
     /// <summary>
-    /// 叶子构件：图像文件、文本文件 和 视频文件
+    ///     叶子构件：图像文件、文本文件 和 视频文件
     /// </summary>
     public class ImageFile : AbstractFile
     {
-        private string name;
+        private readonly string name;
 
         public ImageFile(string name)
         {
@@ -43,7 +39,7 @@ namespace EDC.DesignPattern.Composite.RefactoredVersion
 
     public class TextFile : AbstractFile
     {
-        private string name;
+        private readonly string name;
 
         public TextFile(string name)
         {
@@ -75,7 +71,7 @@ namespace EDC.DesignPattern.Composite.RefactoredVersion
 
     public class VideoFile : AbstractFile
     {
-        private string name;
+        private readonly string name;
 
         public VideoFile(string name)
         {

@@ -1,10 +1,7 @@
 ﻿//using EDC.DesignPattern.Composite.InitializeVersion;
-using EDC.DesignPattern.Composite.RefactoredVersion;
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EDC.DesignPattern.Composite.RefactoredVersion;
 
 namespace EDC.DesignPattern.Composite
 {
@@ -21,6 +18,7 @@ namespace EDC.DesignPattern.Composite
         }
 
         #region v1
+
         public static void InitializeVersionDemo()
         {
             //Folder folder1 = new Folder("EDC的资料");
@@ -44,9 +42,11 @@ namespace EDC.DesignPattern.Composite
 
             //folder1.KillVirus();
         }
+
         #endregion
 
         #region v2
+
         public static void RefactoredVersionDemo()
         {
             AbstractFile folder1 = new Folder("EDC的资料");
@@ -80,6 +80,7 @@ namespace EDC.DesignPattern.Composite
 
             folder3.KillVirus();
         }
+
         #endregion
     }
 }

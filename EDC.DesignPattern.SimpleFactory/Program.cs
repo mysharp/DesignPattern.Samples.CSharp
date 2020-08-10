@@ -1,10 +1,6 @@
-﻿using EDC.DesignPattern.SimpleFactory.v1;
+﻿using System;
+using EDC.DesignPattern.SimpleFactory.v1;
 using EDC.DesignPattern.SimpleFactory.v2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.SimpleFactory
 {
@@ -25,32 +21,20 @@ namespace EDC.DesignPattern.SimpleFactory
 
         public static void ClientV1()
         {
-            IChartable chart = ChartFactory.GetChart("histogram");
-            if (chart != null)
-            {
-                chart.Display();
-            }
+            var chart = ChartFactory.GetChart("histogram");
+            if (chart != null) chart.Display();
 
             chart = ChartFactory.GetChart("pie");
-            if (chart != null)
-            {
-                chart.Display();
-            }
+            if (chart != null) chart.Display();
         }
 
         public static void ClientV2()
         {
-            string type = AppConfigHelper.GetChartType();
-            if (string.IsNullOrEmpty(type))
-            {
-                return;
-            }
+            var type = AppConfigHelper.GetChartType();
+            if (string.IsNullOrEmpty(type)) return;
 
-            IChartable chart = ChartFactory.GetChart(type);
-            if (chart != null)
-            {
-                chart.Display();
-            }
+            var chart = ChartFactory.GetChart(type);
+            if (chart != null) chart.Display();
         }
     }
 }

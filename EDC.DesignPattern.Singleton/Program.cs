@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Singleton
 {
@@ -17,20 +13,18 @@ namespace EDC.DesignPattern.Singleton
 
             // 判断负载均衡器是否相同
             if (balancer == balancer2 && balancer == balancer3 && balancer2 == balancer3)
-            {
                 Console.WriteLine("^_^ : the balancer is single！");
-            }
 
             // 增加服务器
-            balancer.AddServer(new CustomServer() { Name = "Server 1" });
-            balancer.AddServer(new CustomServer() { Name = "Server 2" });
-            balancer.AddServer(new CustomServer() { Name = "Server 3" });
-            balancer.AddServer(new CustomServer() { Name = "Server 4" });
+            balancer.AddServer(new CustomServer {Name = "Server 1"});
+            balancer.AddServer(new CustomServer {Name = "Server 2"});
+            balancer.AddServer(new CustomServer {Name = "Server 3"});
+            balancer.AddServer(new CustomServer {Name = "Server 4"});
 
             // 模拟客户端请求的分发
-            for (int i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
             {
-                CustomServer server = balancer.GetServer();
+                var server = balancer.GetServer();
                 Console.WriteLine("the request is assigned to : " + server.Name);
             }
 

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Command
+﻿namespace EDC.DesignPattern.Command
 {
     /// <summary>
-    /// 具体命令类：最小化命令
+    ///     具体命令类：最小化命令
     /// </summary>
     public class MinimizeCommand : Command
     {
-        private WindowHandler handler;
+        private readonly WindowHandler handler;
 
         public MinimizeCommand()
         {
@@ -21,10 +15,7 @@ namespace EDC.DesignPattern.Command
         // 命令执行方法，将调用请求接受者的业务方法
         public override void Execute()
         {
-            if (handler != null)
-            {
-                handler.Minimize();
-            }
+            if (handler != null) handler.Minimize();
         }
     }
 }

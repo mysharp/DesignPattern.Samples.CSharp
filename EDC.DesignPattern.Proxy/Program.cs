@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Proxy
 {
@@ -10,10 +6,10 @@ namespace EDC.DesignPattern.Proxy
     {
         public static void Main(string[] args)
         {
-            ISearcher searcher = AppConfigHelper.GetProxyInstance() as ISearcher;
+            var searcher = AppConfigHelper.GetProxyInstance() as ISearcher;
             if (searcher != null)
             {
-                string result = searcher.DoSearch("杨过", "玉女心经");
+                var result = searcher.DoSearch("杨过", "玉女心经");
             }
 
             Console.ReadKey();

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Mediator
 {
@@ -20,13 +16,13 @@ namespace EDC.DesignPattern.Mediator
         public static void Intialize()
         {
             // Step1.定义中介者对象
-            ConcreteMediator mediator = new ConcreteMediator();
+            var mediator = new ConcreteMediator();
 
             // Step2.定义同事对象
-            Button addButton = new Button();
-            List list = new List();
-            ComboBox cb = new ComboBox();
-            TextBox userNameTextBox = new TextBox();
+            var addButton = new Button();
+            var list = new List();
+            var cb = new ComboBox();
+            var userNameTextBox = new TextBox();
 
             addButton.SetMediator(mediator);
             list.SetMediator(mediator);
@@ -50,14 +46,14 @@ namespace EDC.DesignPattern.Mediator
         public static void Extended()
         {
             // Step1.定义中介者对象
-            SubConcreteMediator mediator = new SubConcreteMediator();
+            var mediator = new SubConcreteMediator();
 
             // Step2.定义同事对象
-            Button addButton = new Button();
-            List list = new List();
-            ComboBox cb = new ComboBox();
-            TextBox userNameTextBox = new TextBox();
-            Label label = new Label();
+            var addButton = new Button();
+            var list = new List();
+            var cb = new ComboBox();
+            var userNameTextBox = new TextBox();
+            var label = new Label();
 
             addButton.SetMediator(mediator);
             list.SetMediator(mediator);

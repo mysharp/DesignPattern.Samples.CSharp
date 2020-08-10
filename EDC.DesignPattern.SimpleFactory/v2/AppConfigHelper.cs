@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.SimpleFactory.v2
 {
@@ -13,12 +10,13 @@ namespace EDC.DesignPattern.SimpleFactory.v2
             string chartType = null;
             try
             {
-                chartType = System.Configuration.ConfigurationManager.AppSettings["charttype"];
+                chartType = ConfigurationManager.AppSettings["charttype"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return chartType;
         }
     }

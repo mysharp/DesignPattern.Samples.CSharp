@@ -1,9 +1,5 @@
-﻿using EDC.DesignPattern.FactoryMethod.v1;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using EDC.DesignPattern.FactoryMethod.v1;
 
 namespace EDC.DesignPattern.FactoryMethod.v0
 {
@@ -20,7 +16,8 @@ namespace EDC.DesignPattern.FactoryMethod.v0
                 // 初始化数据库日志记录器，代码省略
                 return logger;
             }
-            else if(args.Equals("file", StringComparison.OrdinalIgnoreCase))
+
+            if (args.Equals("file", StringComparison.OrdinalIgnoreCase))
             {
                 // 创建日志文件，代码省略
                 // 创建文件日志记录器对象
@@ -28,10 +25,8 @@ namespace EDC.DesignPattern.FactoryMethod.v0
                 // 初始化文件日志记录器，代码省略
                 return logger;
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
     }
 }

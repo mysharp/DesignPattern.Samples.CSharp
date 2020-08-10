@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EDC.DesignPatterm.Decorator
+namespace EDC.DesignPattern.Decorator
 {
     /// <summary>
-    /// 滚动条装饰类：具体装饰类
+    ///     滚动条装饰类：具体装饰类
     /// </summary>
     public class ScrollBarDecorator : ComponentDecorator
     {
         public ScrollBarDecorator(Component component) : base(component)
         {
-
         }
 
         public override void Display()
         {
-            this.SetScrollBar();
+            SetScrollBar();
             base.Display();
         }
 
@@ -29,18 +24,17 @@ namespace EDC.DesignPatterm.Decorator
     }
 
     /// <summary>
-    /// 黑色边框装饰类：具体装饰类
+    ///     黑色边框装饰类：具体装饰类
     /// </summary>
     public class BlackBorderDecorator : ComponentDecorator
     {
         public BlackBorderDecorator(Component component) : base(component)
         {
-
         }
 
         public override void Display()
         {
-            this.SetScrollBar();
+            SetScrollBar();
             base.Display();
         }
 

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.Strategy
 {
@@ -14,19 +10,20 @@ namespace EDC.DesignPattern.Strategy
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["DiscountStrategy"];
+                factoryName = ConfigurationManager.AppSettings["DiscountStrategy"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetStrategyInstance()
         {
-            string assemblyName = AppConfigHelper.GetStrategyName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetStrategyName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;

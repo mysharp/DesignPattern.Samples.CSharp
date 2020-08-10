@@ -1,9 +1,4 @@
-﻿using EDC.DesignPattern.Strategy.IntializeVersion;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace EDC.DesignPattern.Strategy
 {
@@ -13,20 +8,21 @@ namespace EDC.DesignPattern.Strategy
         {
             //InitializeTest();
 
-            MovieTicket mt = new MovieTicket();
-            double originalPrice = 60.0;
-            double currentPrice = originalPrice;
+            var mt = new MovieTicket();
+            var originalPrice = 60.0;
+            var currentPrice = originalPrice;
 
             mt.Price = originalPrice;
             Console.WriteLine("原始票价：{0}", originalPrice);
             Console.WriteLine("----------------------------------------");
 
-            IDiscount discount = AppConfigHelper.GetStrategyInstance() as IDiscount;
+            var discount = AppConfigHelper.GetStrategyInstance() as IDiscount;
             if (discount != null)
             {
                 mt.Discount = discount;
                 currentPrice = mt.Price;
             }
+
             Console.WriteLine("折后票价：{0}", currentPrice);
 
             Console.ReadKey();

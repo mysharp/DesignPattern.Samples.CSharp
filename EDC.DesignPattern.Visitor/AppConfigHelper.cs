@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.Visitor
 {
@@ -14,19 +10,20 @@ namespace EDC.DesignPattern.Visitor
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["DeptName"];
+                factoryName = ConfigurationManager.AppSettings["DeptName"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetDeptInstance()
         {
-            string assemblyName = AppConfigHelper.GetDeptName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetDeptName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;

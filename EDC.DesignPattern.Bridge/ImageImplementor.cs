@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Bridge
+﻿namespace EDC.DesignPattern.Bridge
 {
     /// <summary>
-    /// 抽象操作系统实现类：实现类接口
+    ///     抽象操作系统实现类：实现类接口
     /// </summary>
     public interface ImageImplementor
     {

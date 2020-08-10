@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.TemplateMethod
 {
     /// <summary>
-    /// 具体子类：CurrentAccount => 活期账户类
+    ///     具体子类：CurrentAccount => 活期账户类
     /// </summary>
     public class CurrentAccount : Account
     {

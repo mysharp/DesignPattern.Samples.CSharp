@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Flyweight
+﻿namespace EDC.DesignPattern.Flyweight
 {
     // 具体享元类A
     public class BlackIgoChessman : IgoChessman

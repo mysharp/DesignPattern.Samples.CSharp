@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.Builder
 {
@@ -14,19 +10,20 @@ namespace EDC.DesignPattern.Builder
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["ConcreteBuilder"];
+                factoryName = ConfigurationManager.AppSettings["ConcreteBuilder"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetConcreteBuilderInstance()
         {
-            string assemblyName = AppConfigHelper.GetConcreteBuilderName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetConcreteBuilderName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;

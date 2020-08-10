@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Strategy
 {
     /// <summary>
-    /// 具体策略类：学生票折扣StudentDiscount
+    ///     具体策略类：学生票折扣StudentDiscount
     /// </summary>
     public class StudentDiscount : IDiscount
     {

@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Composite.InitializeVersion
 {
     public class Folder
     {
-        private string name;
-
-        private IList<Folder> folderList = new List<Folder>();
-        private IList<ImageFile> imageList = new List<ImageFile>();
-        private IList<TextFile> textList = new List<TextFile>();
+        private readonly IList<Folder> folderList = new List<Folder>();
+        private readonly IList<ImageFile> imageList = new List<ImageFile>();
+        private readonly string name;
+        private readonly IList<TextFile> textList = new List<TextFile>();
 
         public Folder(string name)
         {
@@ -42,20 +38,11 @@ namespace EDC.DesignPattern.Composite.InitializeVersion
         {
             Console.WriteLine("**** 对文件夹'{0}'进行杀毒", name);
 
-            foreach (var item in folderList)
-            {
-                item.KillVirus();
-            }
+            foreach (var item in folderList) item.KillVirus();
 
-            foreach (var item in imageList)
-            {
-                item.KillVirus();
-            }
+            foreach (var item in imageList) item.KillVirus();
 
-            foreach (var item in textList)
-            {
-                item.KillVirus();
-            }
+            foreach (var item in textList) item.KillVirus();
         }
     }
 }

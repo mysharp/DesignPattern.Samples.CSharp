@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Memento
 {
@@ -18,10 +14,11 @@ namespace EDC.DesignPattern.Memento
         }
 
         #region v1.0 实现单次撤销
+
         public static void SingleRedoDemo()
         {
-            MementoCaretaker mc = new MementoCaretaker();
-            Chessman chess = new Chessman("车", 1, 1);
+            var mc = new MementoCaretaker();
+            var chess = new Chessman("车", 1, 1);
             Display(chess);
             // 保存状态
             mc.Memento = chess.Save();
@@ -44,15 +41,17 @@ namespace EDC.DesignPattern.Memento
         {
             Console.WriteLine("棋子 {0} 当前位置为：第 {1} 行 第 {2} 列", chess.Label, chess.X, chess.Y);
         }
+
         #endregion
 
         #region v2.0 实现多次撤销
+
         private static int index = -1;
-        private static NewMementoCaretaker mementoCaretaker = new NewMementoCaretaker();
+        private static readonly NewMementoCaretaker mementoCaretaker = new NewMementoCaretaker();
 
         public static void MultiRedoDemo()
         {
-            Chessman chess = new Chessman("车", 1, 1);
+            var chess = new Chessman("车", 1, 1);
             Play(chess);
             chess.Y = 4;
             Play(chess);
@@ -73,7 +72,7 @@ namespace EDC.DesignPattern.Memento
             index++;
 
             Console.WriteLine("棋子 {0} 当前位置为 第 {1} 行 第 {2} 列", chess.Label, chess.X, chess.Y);
-        } 
+        }
 
         // 悔棋
         public static void Undo(Chessman chess, int i)
@@ -96,6 +95,7 @@ namespace EDC.DesignPattern.Memento
 
             Console.WriteLine("棋子 {0} 当前位置为 第 {1} 行 第 {2} 列", chess.Label, chess.X, chess.Y);
         }
+
         #endregion
     }
 }

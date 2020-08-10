@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Composite.RefactoredVersion
 {
     /// <summary>
-    /// 文件夹类：容器构件
+    ///     文件夹类：容器构件
     /// </summary>
     public class Folder : AbstractFile
     {
-        private IList<AbstractFile> fileList = new List<AbstractFile>();
-        private string name;
+        private readonly IList<AbstractFile> fileList = new List<AbstractFile>();
+        private readonly string name;
 
         public Folder(string name)
         {
@@ -39,10 +36,7 @@ namespace EDC.DesignPattern.Composite.RefactoredVersion
             // 此处模拟杀毒操作
             Console.WriteLine("---- 对文件夹‘{0}’进行杀毒", name);
 
-            foreach (var item in fileList)
-            {
-                item.KillVirus();
-            }
+            foreach (var item in fileList) item.KillVirus();
         }
     }
 }

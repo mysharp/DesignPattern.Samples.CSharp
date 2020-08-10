@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Command
 {
     /// <summary>
-    /// 请求发送者：功能键
+    ///     请求发送者：功能键
     /// </summary>
     public class FunctionButton
     {
-        // 功能键名称
-        public string Name { get; set; }
         // 维持一个抽象命令对象的引用
         private Command command;
 
         public FunctionButton(string name)
         {
-            this.Name = name;
+            Name = name;
         }
+
+        // 功能键名称
+        public string Name { get; set; }
 
         // 为功能键注入命令
         public void SetCommand(Command command)
@@ -31,10 +28,7 @@ namespace EDC.DesignPattern.Command
         public void OnClick()
         {
             Console.WriteLine("点击功能键：");
-            if (command != null)
-            {
-                command.Execute();
-            }
+            if (command != null) command.Execute();
         }
     }
 }

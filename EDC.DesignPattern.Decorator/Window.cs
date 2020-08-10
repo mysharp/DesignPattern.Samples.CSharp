@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EDC.DesignPatterm.Decorator
+namespace EDC.DesignPattern.Decorator
 {
     /// <summary>
-    /// 窗体类：具体构件类
+    ///     窗体类：具体构件类
     /// </summary>
     public class Window : Component
     {
@@ -18,7 +14,7 @@ namespace EDC.DesignPatterm.Decorator
     }
 
     /// <summary>
-    /// 文本框类：具体构件类
+    ///     文本框类：具体构件类
     /// </summary>
     public class TextBox : Component
     {
@@ -29,7 +25,7 @@ namespace EDC.DesignPatterm.Decorator
     }
 
     /// <summary>
-    /// 列表框类：具体构件类
+    ///     列表框类：具体构件类
     /// </summary>
     public class ListBox : Component
     {

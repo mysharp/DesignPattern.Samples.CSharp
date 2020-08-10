@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Facade
+﻿namespace EDC.DesignPattern.Facade
 {
     public class EncryptFacade
     {
-        private FileReader reader;
-        private CipherMachine cipher;
-        private FileWriter writer;
+        private readonly CipherMachine cipher;
+        private readonly FileReader reader;
+        private readonly FileWriter writer;
 
         public EncryptFacade()
         {
@@ -21,8 +15,8 @@ namespace EDC.DesignPattern.Facade
 
         public void FileEncrypt(string fileNameSrc, string fileNameDes)
         {
-            string plainStr = reader.Read(fileNameSrc);
-            string encryptedStr = cipher.Encrypt(plainStr);
+            var plainStr = reader.Read(fileNameSrc);
+            var encryptedStr = cipher.Encrypt(plainStr);
             writer.Write(encryptedStr, fileNameDes);
         }
     }

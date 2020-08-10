@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.Command
 {
@@ -14,19 +10,20 @@ namespace EDC.DesignPattern.Command
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["HelpCommand"];
+                factoryName = ConfigurationManager.AppSettings["HelpCommand"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetCommandAInstance()
         {
-            string assemblyName = AppConfigHelper.GetCommandAName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetCommandAName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;
@@ -37,19 +34,20 @@ namespace EDC.DesignPattern.Command
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["MinimizeCommand"];
+                factoryName = ConfigurationManager.AppSettings["MinimizeCommand"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetCommandBInstance()
         {
-            string assemblyName = AppConfigHelper.GetCommandBName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetCommandBName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;

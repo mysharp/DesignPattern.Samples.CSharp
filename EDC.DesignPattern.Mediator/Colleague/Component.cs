@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Mediator
+﻿namespace EDC.DesignPattern.Mediator
 {
     /// <summary>
-    /// 抽象同事类：抽象组件
+    ///     抽象同事类：抽象组件
     /// </summary>
     public abstract class Component
     {

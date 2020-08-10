@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Adapter
+﻿namespace EDC.DesignPattern.Adapter
 {
     /// <summary>
-    /// 适配器：成绩操作适配器类
+    ///     适配器：成绩操作适配器类
     /// </summary>
     public class OperationAdapter : IScoreOperation
     {
-        private QuickSortHelper sortTarget;
-        private BinarySearchHelper searchTarget;
+        private readonly BinarySearchHelper searchTarget;
+        private readonly QuickSortHelper sortTarget;
 
         public OperationAdapter()
         {

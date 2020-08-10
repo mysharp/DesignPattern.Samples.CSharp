@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Prototype.PrepareAhead
+﻿namespace EDC.DesignPattern.Prototype.PrepareAhead
 {
     public class ConcretePrototype : Prototype
     {
@@ -13,7 +7,7 @@ namespace EDC.DesignPattern.Prototype.PrepareAhead
         {
             // 创建新对象
             Prototype prototype = new ConcretePrototype();
-            prototype.CustomAttr = this.CustomAttr;
+            prototype.CustomAttr = CustomAttr;
 
             return prototype;
         }

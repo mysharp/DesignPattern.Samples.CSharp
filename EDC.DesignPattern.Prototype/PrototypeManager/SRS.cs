@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Prototype
 {
@@ -20,7 +16,7 @@ namespace EDC.DesignPattern.Prototype
 
         object ICloneable.Clone()
         {
-            return this.Clone();
+            return Clone();
         }
     }
 }

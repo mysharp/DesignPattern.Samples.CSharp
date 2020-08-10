@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.Facade
 {
@@ -14,19 +10,20 @@ namespace EDC.DesignPattern.Facade
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["EncryptFacadeName"];
+                factoryName = ConfigurationManager.AppSettings["EncryptFacadeName"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetFacadeInstance()
         {
-            string assemblyName = AppConfigHelper.GetFacadeName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetFacadeName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;

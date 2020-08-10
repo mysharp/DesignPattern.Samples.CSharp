@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.ChainOfResponsibility
+﻿namespace EDC.DesignPattern.ChainOfResponsibility
 {
     /// <summary>
-    /// 采购单处理类
+    ///     采购单处理类
     /// </summary>
     public class PurchaseRequestHandler
     {
@@ -15,21 +9,13 @@ namespace EDC.DesignPattern.ChainOfResponsibility
         public void SendRequestToApprover(PurchaseRequest request)
         {
             if (request.Amount < 5000) // 主任可审批该采购单
-            {
                 HandleByDirector(request);
-            }
-            else if(request.Amount < 100000) // 副董事长可审批该采购单
-            {
+            else if (request.Amount < 100000) // 副董事长可审批该采购单
                 HandleByVicePresident(request);
-            }
             else if (request.Amount < 500000) // 董事长可审批该采购单
-            {
                 HandleByPresident(request);
-            }
             else
-            {
                 HandleByCongress(request); // 董事会可审批该采购单
-            }
         }
 
         // 主管审批采购单

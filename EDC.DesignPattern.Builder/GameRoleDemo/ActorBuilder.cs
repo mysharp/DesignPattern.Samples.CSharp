@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EDC.DesignPattern.Builder
+﻿namespace EDC.DesignPattern.Builder
 {
     /// <summary>
-    /// 角色建造器 ： 抽象建造者
+    ///     角色建造器 ： 抽象建造者
     /// </summary>
     public abstract class ActorBuilder
     {

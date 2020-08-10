@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.AbstractFactory
 {
@@ -14,19 +10,20 @@ namespace EDC.DesignPattern.AbstractFactory
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["SkinFactory"];
+                factoryName = ConfigurationManager.AppSettings["SkinFactory"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetSkinFactoryInstance()
         {
-            string assemblyName = AppConfigHelper.GetSkinFactoryName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetSkinFactoryName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;

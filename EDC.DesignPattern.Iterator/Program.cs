@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDC.DesignPattern.Iterator
 {
@@ -17,8 +14,8 @@ namespace EDC.DesignPattern.Iterator
             products.Add("葵花宝典");
             products.Add("四十二章经");
 
-            AbstractObjectList objectList = new ProductList(products);      // 创建聚合对象
-            AbstractIterator iterator = objectList.CreateIterator();                // 创建迭代器对象
+            AbstractObjectList objectList = new ProductList(products); // 创建聚合对象
+            var iterator = objectList.CreateIterator(); // 创建迭代器对象
 
             Console.WriteLine("正向遍历");
             while (!iterator.IsLast())

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.Bridge
 {
@@ -14,19 +10,20 @@ namespace EDC.DesignPattern.Bridge
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["RefinedAbstraction"];
+                factoryName = ConfigurationManager.AppSettings["RefinedAbstraction"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetImageInstance()
         {
-            string assemblyName = AppConfigHelper.GetImageFormatName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetImageFormatName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;
@@ -37,19 +34,20 @@ namespace EDC.DesignPattern.Bridge
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["ConcreteImplementor"];
+                factoryName = ConfigurationManager.AppSettings["ConcreteImplementor"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetEnvInstance()
         {
-            string assemblyName = AppConfigHelper.GetEnvName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetEnvName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;

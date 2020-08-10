@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace EDC.DesignPattern.Adapter
 {
@@ -14,19 +10,20 @@ namespace EDC.DesignPattern.Adapter
             string factoryName = null;
             try
             {
-                factoryName = System.Configuration.ConfigurationManager.AppSettings["AdapterName"];
+                factoryName = ConfigurationManager.AppSettings["AdapterName"];
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
             return factoryName;
         }
 
         public static object GetAdapterInstance()
         {
-            string assemblyName = AppConfigHelper.GetAdapterName();
-            Type type = Type.GetType(assemblyName);
+            var assemblyName = GetAdapterName();
+            var type = Type.GetType(assemblyName);
 
             var instance = Activator.CreateInstance(type);
             return instance;
